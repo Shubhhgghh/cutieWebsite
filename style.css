@@ -1,0 +1,754 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,210,225,0.7), transparent 30%),
+        linear-gradient(135deg, #fff8fb, #ffe4ee, #fff5f8);
+
+    color: #8b3a56;
+}
+
+
+/* ================= PAGES ================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+.page.active {
+    display: flex;
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #f28aaa;
+
+    font-size: 20px;
+
+    animation: floatHeart linear forwards;
+
+    opacity: 0.65;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* ================= QUESTION CARD ================= */
+
+.question-card {
+
+    position: relative;
+    z-index: 2;
+
+    width: min(92%, 450px);
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.82);
+
+    box-shadow:
+        0 15px 45px rgba(200,100,130,0.18),
+        inset 0 0 20px rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.big-heart {
+    font-size: 70px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.question-card h1 {
+    margin-top: 15px;
+
+    font-size: clamp(28px, 7vw, 42px);
+
+    color: #c64b72;
+}
+
+.question {
+    margin-top: 18px;
+
+    font-size: clamp(20px, 5vw, 26px);
+
+    color: #91405b;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.buttons {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 35px;
+
+    min-height: 70px;
+}
+
+button {
+    border: none;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.yes-btn,
+.no-btn {
+
+    min-width: 120px;
+
+    padding: 14px 22px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #f56f98, #e84678);
+
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(232,70,120,0.25);
+}
+
+.yes-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+}
+
+.no-btn {
+    background: white;
+
+    color: #d05a7b;
+
+    border: 2px solid #f3a2b9;
+}
+
+.no-btn:hover {
+    transform: scale(1.03);
+}
+
+
+/* ================= SPECIAL PAGE ================= */
+
+.special-container {
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+.special-container h1 {
+
+    min-height: 70px;
+
+    font-size: clamp(28px, 7vw, 45px);
+
+    color: #c84670;
+}
+
+.sparkle {
+    font-size: 55px;
+
+    animation: sparkle 1.2s infinite alternate;
+}
+
+@keyframes sparkle {
+
+    from {
+        transform: scale(0.8) rotate(-10deg);
+    }
+
+    to {
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+.heart-loader {
+
+    margin-top: 25px;
+
+    font-size: 75px;
+
+    animation: heartBeat 0.8s infinite;
+}
+
+
+/* ================= NOTEBOOK ================= */
+
+#letterPage {
+    align-items: flex-start;
+
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.notebook {
+
+    position: relative;
+
+    width: min(900px, 95%);
+
+    min-height: 85vh;
+
+    padding: 55px 35px 45px 75px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf9 0px,
+            #fffdf9 31px,
+            #f2b6c8 32px,
+            #fffdf9 33px
+        );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 45px rgba(160,80,100,0.2);
+
+    transform: rotate(-0.4deg);
+
+    overflow: hidden;
+}
+
+.notebook::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 48px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: #ee9db5;
+}
+
+.paper-hole {
+
+    position: absolute;
+
+    left: 18px;
+
+    width: 18px;
+    height: 18px;
+
+    background: #fff0f4;
+
+    border: 2px solid #e4a0b4;
+
+    border-radius: 50%;
+}
+
+.hole1 {
+    top: 90px;
+}
+
+.hole2 {
+    top: 50%;
+}
+
+.hole3 {
+    bottom: 90px;
+}
+
+.letter-content {
+
+    position: relative;
+    z-index: 2;
+
+    color: #704354;
+
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 2;
+}
+
+.letter-title {
+
+    text-align: center;
+
+    font-size: clamp(24px, 6vw, 35px);
+
+    font-weight: bold;
+
+    color: #c94d73;
+
+    margin-bottom: 25px;
+}
+
+.letter-content p {
+    margin-bottom: 17px;
+}
+
+.signature {
+    text-align: right;
+
+    margin-top: 25px;
+}
+
+.continue-btn,
+.final-btn {
+
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background: linear-gradient(135deg, #f16f96, #d94372);
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(210,60,105,0.25);
+
+    transition: transform 0.25s ease;
+}
+
+.continue-btn:hover,
+.final-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+}
+
+
+/* ================= MEMORIES ================= */
+
+#memoriesPage {
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    padding-top: 45px;
+    padding-bottom: 50px;
+}
+
+#memoriesPage.active {
+    display: flex;
+}
+
+.memories-header {
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.small-heart {
+    font-size: 45px;
+
+    animation: heartBeat 1.3s infinite;
+}
+
+.memories-header h1 {
+
+    margin-top: 8px;
+
+    color: #c64d73;
+
+    font-size: clamp(28px, 7vw, 42px);
+}
+
+.memories-header p {
+
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    color: #91405b;
+}
+
+.memories-container {
+
+    position: relative;
+    z-index: 2;
+
+    width: min(1000px, 96%);
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    padding: 15px;
+}
+
+.memory-card {
+
+    position: relative;
+
+    padding: 14px 14px 20px;
+
+    background: #fffdf7;
+
+    box-shadow: 0 10px 25px rgba(150,80,100,0.18);
+
+    transform: rotate(-2deg);
+
+    opacity: 0;
+
+    animation: memoryAppear 0.8s forwards;
+
+}
+
+.memory-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.memory-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.memory-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.memory-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.memory-card:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.memory-card:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.memory-card:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+.memory-card:nth-child(8) {
+    animation-delay: 1.4s;
+}
+
+.memory-card:nth-child(9) {
+    animation-delay: 1.6s;
+}
+
+.memory-card:nth-child(10) {
+    animation-delay: 1.8s;
+}
+
+@keyframes memoryAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.memory-card img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+}
+
+.memory-card p {
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #855063;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 15px;
+}
+
+.pin {
+
+    position: absolute;
+
+    z-index: 3;
+
+    top: -13px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 25px;
+}
+
+.final-btn {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 30px;
+}
+
+
+/* ================= FINAL PAGE ================= */
+
+.final-container {
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.final-heart {
+
+    font-size: clamp(100px, 30vw, 180px);
+
+    animation:
+        finalBeat 1s infinite,
+        finalFloat 3s ease-in-out infinite;
+}
+
+@keyframes finalBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes finalFloat {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -15px;
+    }
+}
+
+.final-container h1 {
+
+    color: #c5416c;
+
+    font-size: clamp(40px, 10vw, 70px);
+}
+
+.final-container h2 {
+
+    margin-top: 5px;
+
+    color: #e14d7b;
+
+    font-size: clamp(35px, 9vw, 65px);
+}
+
+.final-container p {
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    color: #874258;
+}
+
+.final-sparkles {
+
+    margin-top: 30px;
+
+    font-size: 30px;
+
+    animation: sparkle 1.5s infinite alternate;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 15px;
+    }
+
+    .question-card {
+        padding: 35px 18px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        min-width: 105px;
+        padding: 13px 15px;
+    }
+
+    .notebook {
+
+        width: 98%;
+
+        padding:
+            45px
+            22px
+            35px
+            55px;
+
+        min-height: 90vh;
+    }
+
+    .notebook::before {
+        left: 38px;
+    }
+
+    .paper-hole {
+        left: 10px;
+    }
+
+    .letter-content {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .memories-container {
+        grid-template-columns: 1fr;
+
+        width: 94%;
+
+        gap: 35px;
+    }
+
+    .memory-card {
+        max-width: 390px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+    .final-container h1 {
+        font-size: 45px;
+    }
+
+    .final-container h2 {
+        font-size: 40px;
+    }
+}
+

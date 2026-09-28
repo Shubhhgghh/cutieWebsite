@@ -1,0 +1,275 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Cutie 🥰</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating romantic background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Music -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ================= QUESTION PAGE ================= -->
+    <section id="questionPage" class="page active">
+
+        <div class="question-card">
+
+            <div class="big-heart">💗</div>
+
+            <h1>Hey Cutie 🥰</h1>
+
+            <p class="question">
+                Do you love me? 💕
+            </p>
+
+            <div class="buttons">
+                <button id="yesBtn" class="yes-btn">
+                    YES ❤️
+                </button>
+
+                <button id="noBtn" class="no-btn">
+                    NO 🥺
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SECOND QUESTION ================= -->
+    <section id="secondPage" class="page">
+
+        <div class="question-card">
+
+            <div class="big-heart">🥺</div>
+
+            <h1>You don't really love me?</h1>
+
+            <p class="question">
+                Are you sure about that? 💔
+            </p>
+
+            <div class="buttons second-buttons">
+
+                <button id="secondYesBtn" class="yes-btn">
+                    YES ❤️
+                </button>
+
+                <button id="secondNoBtn" class="no-btn">
+                    NO 🥺
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SPECIAL MESSAGE ================= -->
+    <section id="specialPage" class="page">
+
+        <div class="special-container">
+
+            <div class="sparkle">✨</div>
+
+            <h1 id="typingText"></h1>
+
+            <div class="heart-loader">
+                💗
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LETTER ================= -->
+    <section id="letterPage" class="page">
+
+        <div class="notebook">
+
+            <div class="paper-hole hole1"></div>
+            <div class="paper-hole hole2"></div>
+            <div class="paper-hole hole3"></div>
+
+            <div class="letter-content">
+
+                <div class="letter-title">
+                    💌 A Little Letter For You
+                </div>
+
+                <p>
+                    Dear Cutie 🥰,
+                </p>
+
+                <p>
+                    I don't know if words can ever explain how special
+                    you are to me, but I still wanted to try. 💗
+                </p>
+
+                <p>
+                    Sometimes the smallest moments become the biggest
+                    memories. Your smile, your little habits, our
+                    conversations and all those moments we shared...
+                    they are precious to me. 🌸
+                </p>
+
+                <p>
+                    I just wanted to make this little place for you,
+                    because you deserve something made especially
+                    for you. ✨
+                </p>
+
+                <p>
+                    Thank you for being my Cutie. 🥰❤️
+                </p>
+
+                <p class="signature">
+                    With lots of love,<br>
+                    Someone who really loves you 💕
+                </p>
+
+                <button id="continueBtn" class="continue-btn">
+                    Continue ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MEMORIES ================= -->
+    <section id="memoriesPage" class="page">
+
+        <div class="memories-header">
+
+            <div class="small-heart">💗</div>
+
+            <h1>Our Little Memories 📸</h1>
+
+            <p>
+                Every picture has a little story... 💕
+            </p>
+
+        </div>
+
+        <div class="memories-container">
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory1.png" alt="Memory 1">
+                <p>One beautiful memory 💕</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory2.png" alt="Memory 2">
+                <p>A moment worth remembering 🥰</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory3.png" alt="Memory 3">
+                <p>One of my favorites 💗</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory4.png" alt="Memory 4">
+                <p>Just us ✨</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory5.png" alt="Memory 5">
+                <p>A little piece of happiness 🌸</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory6.png" alt="Memory 6">
+                <p>Another special moment 💕</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory7.png" alt="Memory 7">
+                <p>Forever a sweet memory 🥰</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory8.png" alt="Memory 8">
+                <p>Smile! 💗</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory9.png" alt="Memory 9">
+                <p>This one means a lot ✨</p>
+            </div>
+
+            <div class="memory-card">
+                <div class="pin">📌</div>
+                <img src="images/memory10.png" alt="Memory 10">
+                <p>And one last memory... 💕</p>
+            </div>
+
+        </div>
+
+        <button id="finalBtn" class="final-btn">
+            One Last Surprise ❤️
+        </button>
+
+    </section>
+
+
+    <!-- ================= FINAL PAGE ================= -->
+    <section id="finalPage" class="page">
+
+        <div class="final-container">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <h1>
+                I Love You
+            </h1>
+
+            <h2>
+                Cutieeee 🥰
+            </h2>
+
+            <p>
+                More than these little words can ever say. 💗
+            </p>
+
+            <div class="final-sparkles">
+                ✨ 💕 ✨ 💕 ✨
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
